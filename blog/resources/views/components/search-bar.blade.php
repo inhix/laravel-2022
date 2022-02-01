@@ -1,6 +1,6 @@
 <div class="search-bar">
     <div id="imaginary_container">
-        <form method="GET" action="/blog/">
+        <form method="GET" action="/posts/">
             <div class="input-group stylish-input-group">
                 @if(request('category'))
                     <input type="hidden" name="category" value="{{ request('category') }}">

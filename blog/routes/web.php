@@ -2,14 +2,25 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\NewsletterController;
 
-Route::get('/', [PostController::class, 'index'])->name('home');
-Route::get('/blog', [PostController::class, 'blog'])->name('blog');
-Route::get('/blog/{post:slug}', [PostController::class, 'show']);
-Route::post('/blog/{post:slug}/comments', [CommentController::class, 'store']);
+Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 
-require __DIR__.'/auth.php';
+Route::post('/newsletter', NewsletterController::class);
 
-Route::get('dashboard', function () {return view('dashboard');})->name('dashboard');
-Route::get('welcome', function () {return view('welcome');})->name('welcome');
+Route::get('/posts', [PostController::class, 'index'])->name('blog.index');
+Route::get('/posts/{post:slug}', [PostController::class, 'show']);
+Route::post('/posts/{post:slug}/comments', [CommentController::class, 'store']);
+
+require __DIR__ . '/auth.php';
+
+Route::get('dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
+
+Route::get('welcome', function () {
+    return view('welcome');
+})->name('welcome');

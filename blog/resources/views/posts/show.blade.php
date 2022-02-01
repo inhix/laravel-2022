@@ -13,7 +13,7 @@
                                     <div class="post-info">
                                         <img src="/images/profile-img.png" alt="#"/>
                                         <span>
-                                    <a href="/blog/?author={{ $post->author->username }}">
+                                    <a href="/posts/?author={{ $post->author->username }}">
                                         <h4>by {{ $post->author->name }}</h4>
                                         </a>
                                     <h5>{{ $post->created_at->diffForHumans() }}</h5>
@@ -29,10 +29,17 @@
                                 </p>
                             </div>
                         </div>
-
                         @auth()
                             @include('components.comment-form')
                         @endauth
+                        @guest()
+                            <div class="comment-section">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <h3><a href="{{route('register')}}">Register</a> or <a href="{{route('login')}}">log
+                                            in</a> to leave a comment</h3>
+                                </div>
+                            </div>
+                        @endguest
                         @include('comments')
                     </div>
                     <div class="feature-content">

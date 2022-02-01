@@ -1,11 +1,11 @@
 @if($posts->count() > 0)
-    @if($posts->count() > 5)
+    @if($posts instanceof \Illuminate\Pagination\LengthAwarePaginator)
         {{$posts->links()}}
     @endif
     @foreach($posts as $post)
         <x-news-post :post="$post"/>
     @endforeach
-    @if($posts->count() > 5)
+    @if($posts instanceof \Illuminate\Pagination\LengthAwarePaginator)
         {{$posts->links()}}
     @endif
 @else
