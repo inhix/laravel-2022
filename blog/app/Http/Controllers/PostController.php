@@ -23,4 +23,19 @@ class PostController extends Controller
             'categories' => Category::all()
         ]);
     }
+
+    public function blog()
+    {
+        $posts = $this->getPosts();
+
+        return view('blog', [
+            'posts' => $posts,
+            'categories' => Category::all()
+        ]);
+    }
+
+    protected function getPosts()
+    {
+        return Post::latest()->filter(request()->only('search'))->get();
+    }
 }

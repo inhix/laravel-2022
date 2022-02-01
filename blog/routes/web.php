@@ -9,20 +9,7 @@ use App\Http\Controllers\PostController;
 
 Route::get('/', [PostController::class, 'index'])->name('home');
 
-Route::get('/blog', function () {
-    $posts = Post::latest();
-
-    if (request('search')) {
-        $posts
-            ->where('title', 'like', '%' . request('search') . '%')
-            ->orWhere('content', 'like', '%' . request('search') . '%');
-    }
-
-    return view('blog', [
-        'posts' => $posts->get(),
-        'categories' => Category::all()
-    ]);
-})->name('blog');
+Route::get('/blog', [PostController::class, 'blog'])->name('blog');
 
 Route::get('news/{post:slug}', [PostController::class, 'show']);
 
