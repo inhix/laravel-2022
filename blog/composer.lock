@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e8cf5ff29568746992a8e8e13ca2ade2",
+    "content-hash": "486c22bcd5c92c3ce4c1263fd71d408c",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -5468,6 +5468,71 @@
                 }
             ],
             "time": "2021-12-21T18:20:10+00:00"
+        },
+        {
+            "name": "dietercoopman/laravel-showsql",
+            "version": "v1.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dietercoopman/laravel-showsql.git",
+                "reference": "420237accc5c91214ffddbe02e997431d4b26d65"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dietercoopman/laravel-showsql/zipball/420237accc5c91214ffddbe02e997431d4b26d65",
+                "reference": "420237accc5c91214ffddbe02e997431d4b26d65",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "^6|^7|^8|^9",
+                "php": "^7.4|^8.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^6.15"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Dietercoopman\\Showsql\\ShowsqlServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Dietercoopman\\Showsql\\": "src",
+                    "Dietercoopman\\Showsql\\Database\\Factories\\": "database/factories"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dieter Coopman",
+                    "email": "dieter@deltasolutions.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A Laravel package to output an sql as given to the database",
+            "homepage": "https://github.com/dietercoopman/showsql",
+            "keywords": [
+                "dietercoopman",
+                "laravel",
+                "showsql"
+            ],
+            "support": {
+                "issues": "https://github.com/dietercoopman/laravel-showsql/issues",
+                "source": "https://github.com/dietercoopman/laravel-showsql/tree/v1.3"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/dietercoopman",
+                    "type": "github"
+                }
+            ],
+            "time": "2022-01-19T17:03:52+00:00"
         },
         {
             "name": "doctrine/instantiator",
