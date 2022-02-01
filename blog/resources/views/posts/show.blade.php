@@ -13,7 +13,9 @@
                                     <div class="post-info">
                                         <img src="images/profile-img.png" alt="#"/>
                                         <span>
-                                    <h4>by {{ $post->author->name }}</h4>
+                                    <a href="/blog/?author={{ $post->author->username }}">
+                                        <h4>by {{ $post->author->name }}</h4>
+                                        </a>
                                     <h5>{{ $post->created_at->diffForHumans() }}</h5>
                                  </span>
                                     </div>

@@ -6,7 +6,7 @@
             </div>
             <div class="col-lg-8 col-sm-8 col-xs-12">
                 <div class="col-12">
-                    @include('posts')
+                    @include('posts.index')
                 </div>
             </div>
         </div>
