@@ -24,15 +24,10 @@ class PostController extends Controller
 
     public function blog()
     {
-        $posts = $this->getPosts();
+        $posts = Post::latest()->filter(request(['search', 'category', 'author']))->paginate(10)->withQueryString();
 
         return view('blog', [
             'posts' => $posts,
         ]);
-    }
-
-    protected function getPosts()
-    {
-        return Post::latest()->filter(request(['search', 'category', 'author']))->get();
     }
 }

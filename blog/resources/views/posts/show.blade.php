@@ -5,13 +5,13 @@
                 <div class="col-md-9">
                     <div class="feature-post">
                         <div class="feature-img">
-                            <img src="images/img-03_002.jpg" class="img-responsive" alt="#"/>
+                            <img src="/images/img-03_002.jpg" class="img-responsive" alt="#"/>
                         </div>
                         <div class="feature-cont">
                             <div class="post-people">
                                 <div class="left-profile">
                                     <div class="post-info">
-                                        <img src="images/profile-img.png" alt="#"/>
+                                        <img src="/images/profile-img.png" alt="#"/>
                                         <span>
                                     <a href="/blog/?author={{ $post->author->username }}">
                                         <h4>by {{ $post->author->name }}</h4>

@@ -16,10 +16,10 @@ class PostFactory extends Factory
     public function definition()
     {
         return [
-            'user_id'=>User::factory(),
-            'category_id'=>Category::factory(),
-            'title' => $this->faker->sentence,
-            'slug' => $this->faker->slug,
+            'user_id'=>rand(1,20),
+            'category_id'=>rand(1,4),
+            'title' => $this->faker->sentence(),
+            'slug' => $this->faker->slug(),
             'excerpt' => $this->faker->sentence(),
             'content' => $this->faker->paragraph()
         ];

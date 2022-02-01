@@ -6,7 +6,7 @@
                     <div class="col-md-6">
                         <div class="full">
                             <div class="logo">
-                                <a href="index.html"><img src="images/logo.png" alt="#"/></a>
+                                <a href="index.html"><img src="/images/logo.png" alt="#"/></a>
                             </div>
                         </div>
                     </div>
@@ -23,11 +23,11 @@
                             <!-- button section -->
                             <ul class="login">
                                 <li class="login-modal">
-                                    <a href="#" class="login"><i class="fa fa-user"></i>Login</a>
+                                    <a href="{{ route('login') }}" class="login"><i class="fa fa-user"></i>Login</a>
                                 </li>
                                 <li>
                                     <div class="cart-option">
-                                        <a href="#"><i class="fa fa-shopping-cart"></i>Register</a>
+                                        <a href="{{ route('register') }}"><i class="fa fa-shopping-cart"></i>Register</a>
                                     </div>
                                 </li>
                             </ul>
@@ -71,21 +71,21 @@
                                                                         <div class="item active">
                                                                             <div class="banner-for-match"><a
                                                                                     href="#"><img class="img-responsive"
-                                                                                                  src="images/match-banner1.jpg"
+                                                                                                  src="/images/match-banner1.jpg"
                                                                                                   alt="#"/></a></div>
                                                                         </div>
                                                                         <!-- End Item -->
                                                                         <div class="item">
                                                                             <div class="banner-for-match"><a
                                                                                     href="#"><img class="img-responsive"
-                                                                                                  src="images/match-banner1.jpg"
+                                                                                                  src="/images/match-banner1.jpg"
                                                                                                   alt="#"/></a></div>
                                                                         </div>
                                                                         <!-- End Item -->
                                                                         <div class="item">
                                                                             <div class="banner-for-match"><a
                                                                                     href="#"><img class="img-responsive"
-                                                                                                  src="images/match-banner1.jpg"
+                                                                                                  src="/images/match-banner1.jpg"
                                                                                                   alt="#"/></a></div>
                                                                         </div>
                                                                         <!-- End Item -->

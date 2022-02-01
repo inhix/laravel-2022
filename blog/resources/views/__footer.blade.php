@@ -5,7 +5,7 @@
                 <div class="full">
                     <div class="footer-widget">
                         <div class="footer-logo">
-                            <a href="#"><img src="images/footer-logo.png" alt="#" /></a>
+                            <a href="#"><img src="/images/footer-logo.png" alt="#" /></a>
                         </div>
                         <p>Most of our events have hard and easy route choices as we are always keen to encourage new riders.</p>
                         <ul class="social-icons style-4 pull-left">
