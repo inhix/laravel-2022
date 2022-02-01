@@ -12,15 +12,13 @@ class PostController extends Controller
     {
         return view('index', [
             'posts' => Post::latest()->take(5)->get(),
-            'categories' => Category::all()
         ]);
     }
 
     public function show(Post $post)
     {
-        return view('news', [
+        return view('posts.show', [
             'post' => $post,
-            'categories' => Category::all()
         ]);
     }
 
@@ -30,12 +28,11 @@ class PostController extends Controller
 
         return view('blog', [
             'posts' => $posts,
-            'categories' => Category::all()
         ]);
     }
 
     protected function getPosts()
     {
-        return Post::latest()->filter(request()->only('search'))->get();
+        return Post::latest()->filter(request(['search', 'category', 'author']))->get();
     }
 }
