@@ -29,8 +29,11 @@
                                 </p>
                             </div>
                         </div>
+
+                        @auth()
+                            @include('components.comment-form')
+                        @endauth
                         @include('comments')
-                        @include('components.comment-form')
                     </div>
                     <div class="feature-content">
                     </div>

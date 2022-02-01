@@ -13,9 +13,6 @@
                         @endif
                         <form method="POST" action="{{ route('password.request') }}">
                             @csrf
-
-                            <input type="hidden" name="token" value="{{ $token }}">
-
                             <div class="form-group row">
                                 <label for="email"
                                        class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
@@ -23,7 +20,7 @@
                                 <div class="col-md-6">
                                     <input id="email" type="email"
                                            class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}"
-                                           name="email" value="{{ $email or old('email') }}" required autofocus>
+                                           name="email" value="{{ old('email') }}" required autofocus>
 
                                     @if ($errors->has('email'))
                                         <span class="invalid-feedback">
