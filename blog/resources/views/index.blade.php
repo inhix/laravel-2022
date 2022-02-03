@@ -1,7 +1,7 @@
 <x-layout>
 
-    @include('next-match')
+    <x-next-game/>
     @include('posts-layout')
-    @include('team-index')
+    <x-players-index/>
 
 </x-layout>

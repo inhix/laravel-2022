@@ -1,2 +1,2 @@
 @props(['icon'])
-<li><a class="{{ $icon->class }}" href="{{ $icon->link }}"><i class="{{ $icon->logo_class }}"></i></a></li>
+<li><a class="{{ $icon->class }}" href="{{ $icon->link }}" target="_blank"><i class="{{ $icon->logo_class }}"></i></a></li>

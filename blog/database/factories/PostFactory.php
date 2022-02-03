@@ -22,7 +22,9 @@ class PostFactory extends Factory
             'image' => null,
             'slug' => $this->faker->slug(),
             'excerpt' => $this->faker->sentence(),
-            'content' => $this->faker->paragraph()
+            'content' => $this->faker->paragraph(),
+            'views' => rand(1,10000),
+            'published_at' => date('Y-m-d H:i:s', rand(strtotime('-1 week'), strtotime('now')))
         ];
     }
 }

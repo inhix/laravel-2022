@@ -2,10 +2,10 @@
 
 namespace App\View\Components;
 
-use App\Models\Game;
+use App\Models\Player;
 use Illuminate\View\Component;
 
-class GamesWidget extends Component
+class PlayersIndex extends Component
 {
     /**
      * Create a new component instance.
@@ -24,7 +24,7 @@ class GamesWidget extends Component
      */
     public function render()
     {
-        $games = Game::whereNotNull('score')->orderby('start_time')->take(5)->get();
-        return view('components.games-widget', compact('games'));
+        $players = Player::inRandomOrder()->limit(4)->get();
+        return view('components.players-index', compact('players'));
     }
 }

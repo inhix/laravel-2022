@@ -3,9 +3,10 @@
 namespace App\View\Components;
 
 use App\Models\Game;
+use Carbon\Carbon;
 use Illuminate\View\Component;
 
-class GamesWidget extends Component
+class NextGame extends Component
 {
     /**
      * Create a new component instance.
@@ -24,7 +25,7 @@ class GamesWidget extends Component
      */
     public function render()
     {
-        $games = Game::whereNotNull('score')->orderby('start_time')->take(5)->get();
-        return view('components.games-widget', compact('games'));
+        $nextGame = Game::where('start_time', '>', date('Y-m-d H:i:s'))->orderBy('start_time')->first();
+        return view('components.next-game', compact('nextGame'));
     }
 }

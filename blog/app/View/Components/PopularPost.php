@@ -2,10 +2,10 @@
 
 namespace App\View\Components;
 
-use App\Models\Game;
+use App\Models\Post;
 use Illuminate\View\Component;
 
-class GamesWidget extends Component
+class PopularPost extends Component
 {
     /**
      * Create a new component instance.
@@ -24,7 +24,7 @@ class GamesWidget extends Component
      */
     public function render()
     {
-        $games = Game::whereNotNull('score')->orderby('start_time')->take(5)->get();
-        return view('components.games-widget', compact('games'));
+        $popularPost = Post::where('published_at', '>=', date('Y-m-d H:i:s', strtotime('-3 days')))->orderByDesc('views')->first();
+        return view('components.popular-post', compact('popularPost'));
     }
 }

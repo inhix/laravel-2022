@@ -9,7 +9,7 @@ class Post extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title', 'excerpt', 'content'];
+    protected $fillable = ['title', 'excerpt', 'content', 'views'];
 
     protected $with = ['category', 'author'];
 
@@ -48,6 +48,12 @@ class Post extends Model
                 $query->where('username', $author)
             )
         );
+    }
+
+    public function increaseViewsCount()
+    {
+        $this->views++;
+        return $this->save();
     }
 
 }

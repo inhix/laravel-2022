@@ -8,12 +8,12 @@
                             <ul>
                                 <li>
                                     <img src="images/img-03.png" alt="">
-                                    <span>Footbal Team</span>
+                                    <span>Team Spirit</span>
                                 </li>
                                 <li class="vs"><span>vs</span></li>
                                 <li>
-                                    <img src="images/img-04.png" alt="">
-                                    <span>Super Team Club</span>
+                                    <img src="{{ $nextGame->opponent_logo }}" alt="">
+                                    <span>{{ $nextGame->opponent_name }}</span>
                                 </li>
                             </ul>
                         </div>
@@ -27,13 +27,7 @@
             <div class="full">
                 <div class="right-match-time">
                     <h2>Next Match</h2>
-                    <ul id="countdown-1" class="countdown">
-                        <li><span class="days">10 </span>Day </li>
-                        <li><span class="hours">5 </span>Hours </li>
-                        <li><span class="minutes">25 </span>Minutes </li>
-                        <li><span class="seconds">10 </span>Seconds </li>
-                    </ul>
-                    <span>12/02/2017 /19:00pm</span>
+                    <span>{{ date('l, F jS Y, H:i A', strtotime($nextGame->start_time)) }}</span>
                 </div>
             </div>
         </div>

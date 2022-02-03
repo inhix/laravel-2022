@@ -10,7 +10,9 @@
             </div>
             <div id="team-slider">
                 <div class="container">
-                    <x-player/>
+                    @foreach($players as $player)
+                        <x-player-card :player="$player"/>
+                    @endforeach
                 </div>
             </div>
         </div>

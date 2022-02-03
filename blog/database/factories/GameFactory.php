@@ -15,11 +15,11 @@ class GameFactory extends Factory
     {
         return [
             'category_id' => rand(1,4),
-            'score' => null,
+            'score' => rand(1,4) . '-' . rand(1,4),
             'opponent_name' => $this->faker->word(),
             'opponent_logo' => $this->faker->word(),
             'tournament' => $this->faker->word(),
-            'start_time' => $this->faker->dateTimeThisYear()
+            'start_time' => $this->faker->dateTimeBetween('-1 year', '+1 year')
         ];
     }
 }

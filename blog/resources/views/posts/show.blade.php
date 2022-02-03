@@ -27,6 +27,7 @@
                                 <p>
                                     {!! $post->content !!}
                                 </p>
+                                <i class="fa fa-eye"> {{ $post->views }} views</i>
                             </div>
                         </div>
                         @auth()

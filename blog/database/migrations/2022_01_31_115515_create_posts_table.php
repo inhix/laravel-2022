@@ -22,6 +22,7 @@ class CreatePostsTable extends Migration
             $table->string('title');
             $table->text('excerpt');
             $table->text('content');
+            $table->integer('views')->default(0);
             $table->timestamps();
             $table->timestamp('published_at')->nullable();
         });

@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\Category;
 use App\Models\Comment;
 use App\Models\Game;
+use App\Models\Player;
 use App\Models\Post;
 use App\Models\SocialIcon;
 use App\Models\Team;
@@ -24,8 +25,12 @@ class DatabaseSeeder extends Seeder
         Category::factory(4)->create();
         Post::factory(50)->create();
         Comment::factory(300)->create();
-        Game::factory(20)->create();
+        Game::factory(5)->create([
+            'score' => null
+        ]);
+        Game::factory(15)->create([]);
         Team::factory(6)->create();
+        Player::factory(20)->create();
         SocialIcon::factory()->create([
             'class' => 'facebook',
             'link' => 'https://www.facebook.com/teamspiritpage',

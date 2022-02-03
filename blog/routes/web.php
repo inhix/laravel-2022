@@ -9,11 +9,11 @@ use App\Http\Controllers\MatchesController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
-Route::get('/team',[HomeController::class, 'team'])->name('team');
-Route::get('/about',[HomeController::class, 'about'])->name('about');
+Route::get('/team', [HomeController::class, 'team'])->name('team');
+Route::get('/about', [HomeController::class, 'about'])->name('about');
 
-Route::get('/matches',[MatchesController::class, 'index'])->name('matches.index');
-Route::get('/matches/{match:id}',[MatchesController::class, 'show'])->name('matches.show');
+Route::get('/matches', [MatchesController::class, 'index'])->name('matches.index');
+Route::get('/matches/{match:id}', [MatchesController::class, 'show'])->name('matches.show');
 
 Route::post('/newsletter', NewsletterController::class);
 

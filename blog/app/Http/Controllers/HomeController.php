@@ -3,8 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Repository\PostRepository;
-use App\Models\Post;
-use Illuminate\Http\Request;
+use App\Models\Player;
 
 class HomeController extends Controller
 {
@@ -24,7 +23,8 @@ class HomeController extends Controller
 
     public function team()
     {
-        return view('team');
+        $players = Player::all()->sortBy('number');
+        return view('team', compact('players'));
     }
 
     public function about()
