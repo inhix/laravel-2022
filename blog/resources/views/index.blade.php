@@ -2,6 +2,6 @@
 
     @include('next-match')
     @include('posts-layout')
-    @include('team')
+    @include('team-index')
 
 </x-layout>

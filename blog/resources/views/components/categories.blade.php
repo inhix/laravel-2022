@@ -7,7 +7,7 @@
                     <a style="color: black;
                 {{ request('category') === $category->slug ? 'font-weight: bold' : '' }}
                         "
-                       href="/blog/?category={{ $category->slug }} & {{ http_build_query(request()->except('category', 'page')) }}">{{ ucwords($category->name) }}
+                       href="/posts/?category={{ $category->slug }} & {{ http_build_query(request()->except('category', 'page')) }}">{{ ucwords($category->name) }}
                     </a>
                 </li>
             @endforeach

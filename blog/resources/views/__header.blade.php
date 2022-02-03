@@ -6,32 +6,45 @@
                     <div class="col-md-6">
                         <div class="full">
                             <div class="logo">
-                                <a href="index.html"><img src="/images/logo.png" alt="#"/></a>
+                                <a href="/"><img src="/images/logo.png" alt="#"/></a>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="right_top_section">
-                            <!-- social icon -->
-                            <ul class="social-icons pull-left">
-                                <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a class="youtube" href="#"><i class="fa fa-youtube-play"></i></a></li>
-                                <li><a class="pinterest" href="#"><i class="fa fa-pinterest-p"></i></a></li>
-                            </ul>
-                            <!-- end social icon -->
+                            <x-social-icons/>
                             <!-- button section -->
-                            <ul class="login">
-                                <li class="login-modal">
-                                    <a href="{{ route('login') }}" class="login"><i class="fa fa-user"></i>Login</a>
-                                </li>
-                                <li>
-                                    <div class="cart-option">
-                                        <a href="{{ route('register') }}"><i class="fa fa-shopping-cart"></i>Register</a>
-                                    </div>
-                                </li>
-                            </ul>
-                            <!-- end button section -->
+                            @guest()
+                                <ul class="login">
+                                    <li class="login-modal">
+                                        <a href="{{ route('login') }}" class="login"><i class="fa fa-sign-in"></i>Login</a>
+                                    </li>
+                                    <li>
+                                        <div class="cart-option">
+                                            <a href="{{ route('register') }}"><i class="fa fa-user-plus"></i>Register</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            @endguest
+                            @auth()
+                                <ul class="login">
+                                    <li>
+                                        <div class="cart-option">
+                                            <a href="/profile"><i class="fa fa-user"></i>Profile</a>
+                                        </div>
+                                    </li>
+                                    <li class="login-modal">
+                                        <a onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();" class="logout"><i class="fa fa-sign-out"></i>Logout</a>
+                                    </li>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                                </ul>
+                            @endauth
+
+                        <!-- end button section -->
                         </div>
                     </div>
                 </div>
@@ -56,10 +69,11 @@
                                         <div class="collapse navbar-collapse js-navbar-collapse">
                                             <ul class="nav navbar-nav">
                                                 <li class="active"><a href="{{ route('home') }}">Home</a></li>
-                                                <li><a href="about.html">About</a></li>
-                                                <li><a href="team.html">Team</a></li>
+                                                <li><a href="{{ route('about') }}">About</a></li>
+                                                <li><a href="{{ route('team') }}">Team</a></li>
                                                 <li class="dropdown mega-dropdown">
-                                                    <a href="match" class="dropdown-toggle" data-toggle="dropdown">Match<span
+                                                    <a href="{{ route('matches.index') }}" class="dropdown-toggle"
+                                                       data-toggle="dropdown">Match<span
                                                             class="caret"></span></a>
                                                     <ul class="dropdown-menu mega-dropdown-menu">
                                                         <li class="col-sm-8">
@@ -125,7 +139,7 @@
                                                         </li>
                                                     </ul>
                                                 </li>
-                                                <li><a href="{{ route('blog.index') }}">News</a></li>
+                                                <li><a href="{{ route('posts.index') }}">News</a></li>
                                                 <li><a href="{{ route('contact') }}">Contact</a></li>
                                             </ul>
                                         </div>

@@ -19,6 +19,7 @@ class PostFactory extends Factory
             'user_id'=>rand(1,20),
             'category_id'=>rand(1,4),
             'title' => $this->faker->sentence(),
+            'image' => null,
             'slug' => $this->faker->slug(),
             'excerpt' => $this->faker->sentence(),
             'content' => $this->faker->paragraph()

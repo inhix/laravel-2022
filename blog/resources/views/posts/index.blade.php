@@ -7,6 +7,8 @@
     @endforeach
     @if($posts instanceof \Illuminate\Pagination\LengthAwarePaginator)
         {{$posts->links()}}
+    @else
+        <a class="btn" href="{{ route('posts.index') }}">More news</a>
     @endif
 @else
     <span>

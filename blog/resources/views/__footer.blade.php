@@ -8,12 +8,7 @@
                             <a href="#"><img src="/images/footer-logo.png" alt="#" /></a>
                         </div>
                         <p>Most of our events have hard and easy route choices as we are always keen to encourage new riders.</p>
-                        <ul class="social-icons style-4 pull-left">
-                            <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a class="youtube" href="#"><i class="fa fa-youtube-play"></i></a></li>
-                            <li><a class="pinterest" href="#"><i class="fa fa-pinterest-p"></i></a></li>
-                        </ul>
+                        <x-social-icons/>
                     </div>
                 </div>
             </div>
@@ -47,7 +42,7 @@
             <div class="col-md-3">
                 <div class="full">
                     <div class="contact-footer">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d120615.72236587871!2d73.07890527988283!3d19.140910987164396!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1527759905404" width="600" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4554.007632767679!2d37.535115765570104!3d55.747111651713865!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54bdd017303b9%3A0xd1f63f945a2450c2!2z0JzQvtGB0LrQstCwINCh0LjRgtC4!5e0!3m2!1sru!2sua!4v1643750513818!5m2!1sru!2sua" width="600" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
                     </div>
                 </div>
             </div>

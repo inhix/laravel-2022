@@ -1,13 +1,13 @@
 <div class="feature-post small-blog">
     <div class="col-md-5">
         <div class="feature-img">
-            <img src="/images/post2.png" class="img-responsive" alt="#"/>
+            <img src="https://picsum.photos/id/{{$post->id}}/525/604" class="img-responsive" alt="#"/>
         </div>
     </div>
     <div class="col-md-7">
         <div class="feature-cont">
             <div class="post-info">
-                <img src="/images/profile-img.png" alt="#"/>
+                <img src="{{ $post->author->userpic }}" alt="#"/>
                 <span>
                     <a href="/posts/?author={{ $post->author->username }}"><h4>by {{ $post->author->name }}</h4>
                     <h5>Published {{ $post->created_at->diffForHumans() }}</h5>

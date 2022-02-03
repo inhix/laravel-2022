@@ -2,15 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Repository\PostRepository;
 use App\Models\Category;
 use App\Models\Post;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
+    public function __construct(PostRepository $repository)
+    {
+        $this->repository = $repository;
+    }
+
     public function index()
     {
-        $posts = Post::latest()->filter(request(['search', 'category', 'author']))->paginate(10)->withQueryString();
+        $posts = $this->repository->getForBlog();
 
         return view('blog', [
             'posts' => $posts,
